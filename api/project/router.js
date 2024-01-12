@@ -4,10 +4,20 @@ const Projects = require('./model')
 projects_router.get('/', (req, res, next) =>{
     Projects.getProjects()
     .then(project =>{
-       
+
         res.status(200).json(project)
     })
     .catch(next)
+})
+
+projects_router.post('/', async (req, res, next) =>{
+    try{
+        const data = await Projects.create(req.body)
+        res.json(data)
+    }
+    catch (err){
+        next(err)
+    }
 })
 
 

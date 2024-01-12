@@ -1,14 +1,14 @@
 const projects = [
     {project_name: 'online task manager',
-    product_description: 'build task management app',
+    project_description: 'build task management app',
     project_completed: false},
 
     {project_name: 'expense tracker app',
-    product_description: 'develop mobile app for tracking expenses',
+    project_description: 'develop mobile app for tracking expenses',
      project_completed: true},
 
     {project_name: 'contribute to open source project',
-    product_description: 'make contributions in open source projects',
+    project_description: 'make contributions in open source projects',
       project_completed: true},
 ]
 

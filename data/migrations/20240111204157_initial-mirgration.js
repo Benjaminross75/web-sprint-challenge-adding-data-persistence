@@ -7,8 +7,8 @@ exports.up = async function(knex) {
  .createTable('projects', table =>{
     table.increments('project_id')
     table.string('project_name').notNullable()
-    table.string('product_description')
-    table.boolean('project_completed').defaultTo(false)
+    table.string('project_description')
+    table.boolean('project_completed').defaultTo(knex.raw('0'))
  })
  .createTable('resources', table =>{
     table.increments('resource_id')
