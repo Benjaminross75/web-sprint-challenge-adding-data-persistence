@@ -9,6 +9,20 @@ const db = require('../../data/dbConfig')
   return resourceRows
 }
 
+async function getById(resourceId){
+    const result = await db('resources').where('resource_id', resourceId).first()
+    return result
+}
+
+async function create(resource){
+    const [resourceId] = await db('resources').insert(resource)
+    const results = await getById(resourceId)
+
+
+     return results
+ }
+
 module.exports = {
-    getResources
+    getResources,
+    create
 }

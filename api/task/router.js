@@ -11,6 +11,16 @@ tasks_router.get('/', (req, res, next) =>{
     .catch(next)
 })
 
+tasks_router.post('/', async (req, res, next) =>{
+    try{
+        const data = await Tasks.create(req.body)
+        res.json(data)
+    }
+    catch (err){
+        next(err)
+    }
+})
+
 
 tasks_router.use((err, req, res, next) =>{ //eslint-disable-line
     res.status(500).json({

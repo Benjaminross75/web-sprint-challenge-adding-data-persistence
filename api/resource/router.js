@@ -9,6 +9,16 @@ resources_router.get('/', (req, res, next) =>{
     .catch(next)
 })
 
+resources_router.post('/', async (req, res, next) =>{
+    try{
+        const data = await Resources.create(req.body)
+        res.json(data)
+    }
+    catch (err){
+        next(err)
+    }
+})
+
 
 
 resources_router.use((err, req, res, next) =>{ //eslint-disable-line
